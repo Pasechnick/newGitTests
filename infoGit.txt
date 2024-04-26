@@ -63,6 +63,12 @@ after we pull the changes from the remote repo we can push our changes if others
 
 HOW TO RENAME BRANCH ??
 
+> git checkout -b new-branch  // we created a new branch
+> git branch -a  // to see the new branch
+
+then we push the new branch to remote repo:
+> git push --set-upstream origin new-branch
+
 if we are currently on that branch that we want to rename:
 > git branch -m theNewName
 
@@ -71,4 +77,6 @@ if we are on another branch we show explicitly what branch with what name we cha
 
 after that we have changed the branch name only LOCALLY, so we need to push that changes to remote repo:
 
-> git push origin :oldbranchname newbranchname
+> git push origin -u develop
+
+then we delete the old branch
