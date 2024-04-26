@@ -47,3 +47,15 @@ means, now i can clone, change, work with projects i have on my GitHub Repositor
 
 > git remote -v  // shows us information about the remote repo
 > git diff       // will show us what changes i have made
+
+> git add -A 
+> git commit -m "first commit"
+
+also, before we push the changes we need to understand 
+that there might be some changes done from other users that work on that project,
+so we need to pull the changes from that remote repository first
+
+> git pull origin master // or "develop" branch
+after we pull the changes from the remote repo we can push our changes if others from the team project made some changes
+
+> git push origin master // or "develop" branch
