@@ -63,20 +63,25 @@ after we pull the changes from the remote repo we can push our changes if others
 
 HOW TO RENAME BRANCH ??
 
+*we also need to know that changing main branch (or master) as default branch
+might not be successful, so we need to create new branch first and then in GitHub settings set the new branch as default
+
 > git checkout -b new-branch  // we created a new branch
 > git branch -a  // to see the new branch
 
-then we push the new branch to remote repo:
+then we push the new branch to remote repo (or not if it already exists, it is just an example to see that it will affect the remote also):
 > git push --set-upstream origin new-branch
 
 if we are currently on that branch that we want to rename:
-> git branch -m theNewName
+> git branch -m develop
 
 if we are on another branch we show explicitly what branch with what name we change:
-> git branch -m oldBranch develop // will change name of oldBranch to develop
+> git branch -m new-branch develop // will change name of "new-branch" to "develop"
 
-after that we have changed the branch name only LOCALLY, so we need to push that changes to remote repo:
+after we have changed the branch name only LOCALLY, we need to push that change to remote repo:
+> git push origin -u develop  // using new name
 
-> git push origin -u develop
+then we delete the old branch:
+> git push origin --delete new-branch
 
-then we delete the old branch
+
