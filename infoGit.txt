@@ -55,7 +55,20 @@ also, before we push the changes we need to understand
 that there might be some changes done from other users that work on that project,
 so we need to pull the changes from that remote repository first
 
-> git pull origin master // or "develop" branch
+> git pull origin master // or "develop" branch or what ever the branch named (could be main)
 after we pull the changes from the remote repo we can push our changes if others from the team project made some changes
 
 > git push origin master // or "develop" branch
+
+
+HOW TO RENAME BRANCH ??
+
+if we are currently on that branch that we want to rename:
+> git branch -m theNewName
+
+if we are on another branch we show explicitly what branch with what name we change:
+> git branch -m oldBranch develop // will change name of oldBranch to develop
+
+after that we have changed the branch name only LOCALLY, so we need to push that changes to remote repo:
+
+> git push origin :oldbranchname newbranchname
