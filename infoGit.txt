@@ -1,0 +1,49 @@
+> git config --global user.name "AlexMi" 
+> git config --global user.email "mitupov@gmail.com" 
+> git config --list  // will lit all the user configuration
+
+> git config --help  // manual of git to get help
+
+> git init // to initialize the local directory
+after that command we will have ".git" file in the directory, so, after
+we delete this folder (.git) we will not track that directory with git
+
+> rm -rf .git   // removes the git folder in the tracked directory so we no longer 
+track the folder with git
+
+> git status
+
+in order to hide some files that we want to save locally, we use git ignore command
+> touch git.ignore // creates git ignore file that include files we want not to commit to git system
+for example we can use "*" sign to mark all files we want to ignore *.py all python files will be ignored
+
+> git add -A // adds all the files in the directory
+
+> git reset calc.py  // will remove the file from commit 
+
+> git add -A
+> git commit -m "Initial commit"
+> git status
+
+> git log // shows infos about all our commits we have made
+
+
+CONNECT GIT with SSH to my GitHub 2024 April
+
+1. we need to generate SSH key pair on our computer:
+> ssh-keygen -t ed25519 -C "mitupov@gmail.com"  // we use email associated with GitHub
+
+after that it will locally generate a pair here: 
+/Users/alex/.ssh/id_ed25519
+/Users/alex/.ssh/id_ed25519.pub
+
+2. then we need ro add the public key into the GitHub, so we just use "cat" or "pbcopy" to get the key
+> cat ~/.ssh/id_ed25519.pub
+or
+> pbcopy < ~/.ssh/id_ed25519.pub   // will copy the key directly into the clipboard
+
+after that we copy paste that key into GitHub "SSH and GPG" keys section
+means, now i can clone, change, work with projects i have on my GitHub Repository
+
+> git remote -v  // shows us information about the remote repo
+> git diff       // will show us what changes i have made
