@@ -3,5 +3,5 @@
 so we could restore what was inside, it will return us to the previous commit
 
 for example we have accidentally wrote a wrong commit, we can change that text:
-> git commit --amend -m "Complete subtract Function"
+> git commit --amend -m "commit the right way"  // will change the massage of the last commit
 
