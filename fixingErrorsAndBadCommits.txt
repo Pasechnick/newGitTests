@@ -1,0 +1,7 @@
+
+> git checkout fileName  // use when we wrote something wrong, 
+so we could restore what was inside how it was on the previous commit
+
+for example we have accidentally wrote a wrong commit, we can change that text:
+> git commit --amend -m "Complete subtract Function"
+
