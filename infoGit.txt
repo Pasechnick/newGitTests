@@ -84,4 +84,26 @@ after we have changed the branch name only LOCALLY, we need to push that change 
 then we delete the old branch:
 > git push origin --delete new-branch
 
+after that we can check the remote repo, the old branch should be missing
 
+WORK with BRANCH
+
+> git branch newbranch  // we create a new branch
+> git branch // shows all branches
+> git checkout branchName // chose branch
+
+
+PUSH 
+
+after we have created the new branch we need to push it so that there is same branch remotely
+> git push -u origin develop // with -u flag, git tells that we want to connect local branch with the remote one so we do not need to do it every time
+> git push 
+> git pull
+
+in example we have created a new branch for testing some new features,
+so we can merge that feature into the main branch after we have tested the feature:
+
+> git checkout master     // we switch to the branch (the main one) we want to merge with
+> git pull origin master  // in case there a applied changes made remotely
+> git branch --merged     // shows if we have merged anything with on this branch
+> git merge develop       // will merge "master" branch with "develop"
