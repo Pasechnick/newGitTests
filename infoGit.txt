@@ -107,3 +107,14 @@ so we can merge that feature into the main branch after we have tested the featu
 > git pull origin master  // in case there a applied changes made remotely
 > git branch --merged     // shows if we have merged anything with on this branch
 > git merge develop       // will merge "master" branch with "develop"
+
+by now we have merged "master" with "develop", we do not really need develop branch anymore
+we can delete develop branch locally and remotely
+> git branch --merged                 // we double check that we have merged this branches
+> git branch -d develop               // deletes develop branch only locally !!
+> git branch -a                       // we still can see this branch remotely
+> git push origin --delete develop    // deletes the branch remotely on the GitHub server 
+
+*origin means the name of our repository on github
+
+> git branch -a     // will shows us that we have master branch locally and remotely
