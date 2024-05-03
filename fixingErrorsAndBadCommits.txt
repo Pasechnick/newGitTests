@@ -5,3 +5,42 @@ so we could restore what was inside, it will return us to the previous commit
 for example we have accidentally wrote a wrong commit, we can change that text:
 > git commit --amend -m "commit the right way"  // will change the massage of the last commit
 
+we can change the git history, but only if we the only ones who
+
+imagine we have made commits but we understood that we have made these commits to a wrong branch
+how to move a commit to another branch ?:
+
+
+> git log     // to grab the HASH of the particular commit 
+> git reflog  // shows detailed info what we have made
+
+alex@Alexanders-MacBook-Pro newGitTests % git reflog 
+5490fe4 (HEAD -> master, origin/master) HEAD@{0}: commit: another right commit
+1101402 HEAD@{1}: commit (amend): commit the right way
+91c34bd HEAD@{2}: commit: complete some wrong text
+365ea4f HEAD@{3}: commit: add right text
+f771b17 HEAD@{4}: commit: original text commit
+ee15974 HEAD@{5}: commit: begin fixing error commits tutorial
+9275608 HEAD@{6}: commit: delete of develop branch done
+64033de HEAD@{7}: merge develop: Fast-forward
+6d3492d HEAD@{8}: checkout: moving from develop to master
+64033de HEAD@{9}: commit: merge prep
+10e2a40 HEAD@{10}: checkout: moving from master to develop
+6d3492d HEAD@{11}: checkout: moving from develop to master
+10e2a40 HEAD@{12}: commit: how rename branch done
+5388ab2 HEAD@{13}: commit: new branch add old delete
+6d3492d HEAD@{14}: Branch: renamed refs/heads/new-branch to refs/heads/develop
+6d3492d HEAD@{16}: checkout: moving from master to new-branch
+6d3492d HEAD@{17}: commit: new info
+4368265 HEAD@{18}: Branch: renamed refs/heads/main to refs/heads/master
+4368265 HEAD@{20}: commit: ready to push
+88338c5 HEAD@{21}: commit: first
+debc7fb HEAD@{22}: clone: from github.com:Pasechnick/newGitTests.git
+
+
+right now we have hashes so we can use "checkout" command to go right away to that change
+
+> git checkout ee15974    // will move us to that particular commit
+
+after that, if we want to save that "state" (because we are in DETACHED-HEAD-state), we need to create a new branch to "save" that state, otherwise it will be deleted with git-garbage collector,
+after we get get back to the latest commit we can see that the new branch from the old commit is still there, as a feature for example

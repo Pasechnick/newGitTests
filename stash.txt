@@ -1,0 +1,5 @@
+
+Stashes are useful in a situation when we have changes that we are not really ready to commit
+and we get back before we made these changes, but we do not know what to do with them (changes)
+
+we can save these changes into a stash, so we can get back to them later
