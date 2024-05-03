@@ -1,0 +1,23 @@
+> git add -A 
+> git add -all 
+
+adds all changes to commit 
+
+> git reset                 // unchanges all changes (commits)
+> git add -A myDirectory/   // add changes within specific directory only
+
+> git add                   // makes "git add -A" command, because it is a default command
+> git add myDirectory/      // the same command as "git add -A myDirectory/"
+
+> git add -u                // adds all updated/modified files or deleted, but not the untracked ones
+> git add -u myDirectory/   // does the same in the specific directory
+
+> git ad .                  // add all files in the directory we are in right now
+it is same as to write "git add -A ." (add all files in my current directory)
+
+so "git ad ." will add only files that are in the directory we re in right now and will skip on the level up ../..
+
+> git add -A                // will add all files in the current directory and in the whole project (entire working tree), where "git ad ." add files only in the current directory
+
+> git add *                 // use with caution, cuz * is a SHELL command and will not see the deleted files, cuz only git knows what files are deleted but not the file system
+we can get very unexpected results NOT USE
